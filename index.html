@@ -11,12 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
-        // Check the URL path
+        // redirect to Escape KSI 3D game
         window.addEventListener('DOMContentLoaded', () => {
             if (window.location.pathname === '/escape-ksi') {
-                // Redirect to a different page or load different content
-                window.location.href = '/ESCAPE%20KSI%20-%203D!%20Public1.html';
+                window.location.href = '/game1.html';
             }
+	    if (window.location.pathname === '/play') {
+	        window.location.href = '/game1.html';
+	    }
         });
     </script>
 	
