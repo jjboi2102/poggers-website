@@ -11,10 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
-        // redirect to Escape KSI 3D game
+        // redirect to the Escape KSI game if the URL path is "/escape-ksi"
         window.addEventListener('DOMContentLoaded', () => {
             if (window.location.pathname === '/escape-ksi') {
                 window.location.href = '/game1.html';
+            }
+        });
+	// redirect to custom wordle decoder if URL path is "/wordle-decode"
+	window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.pathname === '/wordle-decode') {
+                window.location.href = '/CustomWordleDecoder.html';
             }
         });
     </script>
