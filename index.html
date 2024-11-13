@@ -11,14 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script>
-        // Get the current website link
-        var currentUrl = window.location.href;
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log("Current path:", window.location.pathname); // Debugging line
 
-        // Check the link to see if it needs to redirect
-        if (currentUrl.includes('/escape-ksi')) {
-            // Redirect to Escape KSI game latest version
-            window.location.href = 'https://jjboi.xn--6frz82g/game2.html';
-        }
+            // Check if the path is exactly "/escape-ksi"
+            if (window.location.pathname === '/escape-ksi') {
+                console.log("Redirecting to /game2.html"); // Debugging line
+                window.location.href = '/game2.html'; // Redirect to latest game version
+            }
+        });
     </script>
 
 	
