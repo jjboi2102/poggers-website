@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>VBScript Platformer</title>
+    <HTA:APPLICATION
+        ID="Platformer"
+        APPLICATIONNAME="PlatformerGame"
+        BORDER="yes"
+        BORDERSTYLE="normal"
+        SCROLL="no"
+        SINGLEINSTANCE="yes"
+        WINDOWSTATE="normal"
+    />
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000;
+            overflow: hidden;
+        }
+        #gameArea {
+            position: relative;
+            width: 480px;
+            height: 360px;
+            margin: 0px auto;
+            background-color: #09D;
+            overflow: hidden;
+            border: 2px solid #000;
+        }
+        .platform {
+            position: absolute;
+            background-color: #228B22;
+            height: 20px;
+        }
+        #ground {
+            width: 100%;
+            bottom: 20;
+            left: 0;
+        }
+        #player {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            top: 360px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameArea">
+        <div id="ground" class="platform"></div>
+        <div id="player"></div>
+    </div>
+
+    <script type="text/vbscript">
+        Window.ResizeTo 480, 380
+        ' Variables for game state
+        Dim playerX, playerY, velocityY, isJumping, gravity
+        playerX = 50 ' Start X
+        playerY = 200 ' Start Y
+        velocityY = 0
+        velocityX = 0
+        isJumping = True
+        gravity = 2
+
+        ' Movement variables
+        Dim moveLeft, moveRight
+        moveLeft = False
+        moveRight = False
+
+        ' Game loop to update position
+        Sub GameLoop()
+            ' Update horizontal movement
+            If moveLeft Then
+                playerX = playerX - 5
+                If playerX < 0 Then playerX = 0
+            End If
+            If moveRight Then
+                playerX = playerX + 5
+                If playerX > 455 Then playerX = 455
+            End If
+
+            ' Update vertical movement (jumping)
+            If isJumping Then
+                velocityY = velocityY + gravity
+                playerY = playerY + velocityY
+                If playerY > 315 Then
+                    playerY = 315
+                    isJumping = False
+                    velocityY = 0
+                End If
+            End If
+
+            ' Update player position
+            Dim player
+            Set player = Document.GetElementById("player")
+            player.Style.left = playerX & "px"
+            player.Style.top = playerY & "px"
+
+            ' Call the loop again
+            SetTimeout "GameLoop", 20
+        End Sub
+
+        ' Handle key presses
+        Sub Document_OnKeyDown()
+            Dim key
+            key = Window.Event.KeyCode
+
+            Select Case key
+                Case 37 ' Left arrow
+                    moveLeft = True
+                Case 39 ' Right arrow
+                    moveRight = True
+                Case 38 ' Up arrow (jump)
+                    If Not isJumping Then
+                        isJumping = True
+                        velocityY = -20
+                    End If
+            End Select
+        End Sub
+
+        Sub Document_OnKeyUp()
+            Dim key
+            key = Window.Event.KeyCode
+
+            Select Case key
+                Case 37 ' Left arrow
+                    moveLeft = False
+                Case 39 ' Right arrow
+                    moveRight = False
+            End Select
+        End Sub
+        ' Start the game loop
+        Call GameLoop()
+    </script>
+</body>
+</html>
