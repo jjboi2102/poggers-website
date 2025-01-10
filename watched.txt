@@ -1,4 +1,4 @@
-Movie/show                                            Watched date
+Movie/show                                            Watched date              Opinion
 
 War Of The Worlds (2005)                              November 13th, 2024
 Togo (2019)                                           ?
@@ -49,4 +49,4 @@ Captain America: Civil War (2016)                     ?
 Doctor Strange (2016)                                 ?
 Guardians of the Galaxy Vol. 2 (2017)                 ?
 Spider-Man: Homecoming (2017)                         ?
-Inception (2010)                                      January 10th, 2025
+Inception (2010)                                      January 10th, 2025        interesting movie overall, confusing sometimes, but cool
