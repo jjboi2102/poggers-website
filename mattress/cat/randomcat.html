@@ -2,8 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>random cat pciture!! ! !</title>
+  <title>random cat picture!! ! !</title>
+  <meta property="og:title" content="omg random cat pciture!! ! !">
+  <meta property="og:description" content="click for a random cat!!">
   <link rel="stylesheet" href="random-cat-styles.css">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fefefe;
+    }
+    img {
+      max-width: 100vw;
+      max-height: 100vh;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <!-- discord embed -->
@@ -12,13 +29,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <img id="randomImage" alt="omg random cat pciture! !! ! !">
+  <img id="randomImage" alt="omg random cat pciture!! ! !">
 
   <script>
-    const randomNumber = Math.floor(Math.random() * 185) + 1;
     const img = document.getElementById("randomImage");
-    img.src = `meow/jpg/${randomNumber}.jpg`;
-    // load new cat pic when image is clicked
+
+    async function loadRandomCat() {
+      try {
+        const response = await fetch("https://jjboi.xn--6frz82g/test/media.amt");
+        const text = await response.text();
+        const firstLine = text.split("\n")[0].trim(); // only use the first line
+        const count = parseInt(firstLine);
+
+        const randomNumber = Math.floor(Math.random() * count) + 1;
+        img.src = `meow/jpg/${randomNumber}.jpg`;
+      } catch (err) {
+        console.error("Failed to load image amount:", err);
+      }
+    }
+
+    // Load image on page load
+    loadRandomCat();
+
+    // reload page when image is clicked
     img.addEventListener("click", () => {
       location.reload();
     });
