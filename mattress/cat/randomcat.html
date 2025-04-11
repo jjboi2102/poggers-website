@@ -36,7 +36,7 @@
 
     async function loadRandomCat() {
       try {
-        const response = await fetch("https://jjboi.xn--6frz82g/test/media.amt");
+        const response = await fetch("./media.amt");
         const text = await response.text();
         const firstLine = text.split("\n")[0].trim(); // only use the first line
         const count = parseInt(firstLine);
