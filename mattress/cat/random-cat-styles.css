@@ -1,4 +1,8 @@
 body {
+  font-family: Corbel, sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+  
   margin: 0;
   height: 100vh;
   width: 100vw;
