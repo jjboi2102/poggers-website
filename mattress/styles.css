@@ -1,6 +1,10 @@
-/* styles.css */
+@font-face {
+  font-family: "League Spartan";
+  src: url("font/LeagueSpartan-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
-  font-family: Corbel, sans-serif;
+  font-family: "League Spartan";
   font-size: 22px;
   color: #ffffff;
   background-color: #0A0A0A;
