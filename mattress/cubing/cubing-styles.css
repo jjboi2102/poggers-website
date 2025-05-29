@@ -1,0 +1,20 @@
+.honorable-mentions {
+    font-style: italic;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.rankings {
+    font-weight: bold;
+}
+
+table {
+    align-content: left;
+    align-items: left;
+    text-align: left;
+}
+
+td {
+    border-left: 1px solid #ffffff;
+    padding-left: 10px;
+}
