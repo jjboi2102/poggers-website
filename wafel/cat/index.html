@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <meta charset="UTF-8">
+    <title>WAFEL'S EPIC CAT!!!!!</title>
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- discord embed -->
+    <meta property="og:title" content="wafel's epic cat! 1!!!1">
+    <meta property="og:description" content="walfe's epic cat! !!!!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        img {
+            width: 25%;
+            height: auto;
+        }
+
+        video {
+            width: 25%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html">⬅️HOME</a>
+    
+    <a id="images"></a>
+    <div class="jpg" id="jpgContainer"></div>
+
+    <a href="#top">Jump to top</a>
+
+    <script>
+        async function loadMediaCounts() {
+            try {
+                const response = await fetch("./media.amt");
+                const text = await response.text();
+                const lines = text.split("\n").map(line => line.trim());
+
+                const jpgCount = parseInt(lines[0]);
+                const mp4Count = parseInt(lines[1]);
+
+                const jpgContainer = document.getElementById("jpgContainer");
+                for (let i = jpgCount; i >= 1; i--) {
+                    const img = document.createElement("img");
+                    img.src = `meow/jpeg/${i}.jpeg`;
+                    img.alt = "cat yay";
+                    jpgContainer.appendChild(img);
+                }
+
+            } catch (err) {
+            console.error("Failed to load media counts:", err);
+        }
+    }
+
+    loadMediaCounts();
+    </script>
+</body>
+</html>
