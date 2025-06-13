@@ -1,0 +1,17 @@
+body {
+    background-color: #100f0f;
+    color: #e6e6e6;
+}
+
+a.button:link {
+    color: #00A8FF; /* link before it's clicked */
+}
+a.button:visited {
+    color: #00A8FF; /* link after it's clicked */
+}
+a.button:hover {
+    color: #00C6FF; /* link when hovered */
+}
+a.button:active {
+    color: #00EAFF; /* link while being clicked */
+}
