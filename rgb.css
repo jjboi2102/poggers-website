@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #FF0000, #FFEE00, #04FF00, #00FFDD, #003CFF, #E600FF, #FF0000, #FFEE00, #04FF00, #00FFDD, #003CFF, #E600FF, #FF0000);
+    background-size: 200% auto;
+    animation: gradientMove 2s linear infinite;
+    color: #000000;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 100%;
+    }
+    50% {
+        background-position: 50%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+a.button:link {
+    color: #00A8FF; /* link before it's clicked */
+}
+a.button:visited {
+    color: #00A8FF; /* link after it's clicked */
+}
+a.button:hover {
+    color: #00C6FF; /* link when hovered */
+}
+a.button:active {
+    color: #00EAFF; /* link while being clicked */
+}
