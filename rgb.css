@@ -7,15 +7,19 @@ body {
     color: #000000;
 }
 
+@media (max-width: 768px) {
+    body {
+        background-size: 2000% auto;
+        animation: gradientMove 8s linear infinite;
+    }
+}
+
 @keyframes gradientMove {
     0% {
-        background-position: 100%;
-    }
-    50% {
-        background-position: 50%;
+        background-position: 100% center;
     }
     100% {
-        background-position: 0%;
+        background-position: 0% center;
     }
 }
 
