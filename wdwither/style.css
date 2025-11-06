@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, #c2c3c2, #d9d9d9, #ffffff, #d9d9d9, #c2c3c2);
+    background-size: 200%;
+    animation: backgroundGradient 5s linear infinite;
+    color: #000000;
+    font-family: "SpriteGraffiti";
+}
+
+@font-face {
+  font-family: "SpriteGraffiti";
+  src: url("SpriteGraffiti.otf") format("opentype");
+}
+
+@keyframes backgroundGradient {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes buttonGradient {
+    0% {
+        background-position: 200% center;
+    }    
+    100% {
+        background-position: 0% center;
+    }
+}
+
+a {
+    font-size: 35px;
+}
+
+button {
+    border-radius: 15px;
+    border-width: 10px;
+    border-color: #dfdfdf;
+    width: 275px;
+    height: 60px;
+    font-size: 28px;
+    font-family: "SpriteGraffiti";
+}
+
+.small-button {
+    border-radius: 7px;
+    border-width: 5px;
+    border-color: #dfdfdf;
+    width: 135px;
+    height: 36px;
+    font-size: 20px;
+    font-family: "SpriteGraffiti";
+}
+
+.center-button {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-glow-red {
+    box-shadow: 0 0 2px #ff0000, 0 0 30px #ff0000, 0 0 5px #000000;
+    background: linear-gradient(90deg, #ff4242, #ffffff, #ffffff, #ff4242);
+    background-size: 200%;
+    animation: buttonGradient 0.75s linear infinite;
+}
+
+.button-glow-green {
+    box-shadow: 0 0 2px #00ff00, 0 0 30px #00ff00, 0 0 5px #000000;
+    background: linear-gradient(90deg, #00ff00, #ffffff, #ffffff, #00ff00);
+    background-size: 200%;
+    animation: buttonGradient 0.75s linear infinite;
+}
+
+.header-text {
+    font-size: 69px;
+}
+
+.small-text {
+    font-size: 17px;
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+}
+
+.text-glow {
+    text-shadow: 0 0 2px #ffffff, 0 0 2px #ad3aff, 0 0 10px #4B0082;
+}
+
+a.button:link {
+    color: #00A8FF; /* link before it's clicked */
+}
+a.button:visited {
+    color: #00A8FF; /* link after it's clicked */
+}
+a.button:hover {
+    color: #00C6FF; /* link when hovered */
+}
+a.button:active {
+    color: #00EAFF; /* link while being clicked */
+}
