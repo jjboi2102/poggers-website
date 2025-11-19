@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" type="image/png" href="favicon.png">
+
+	<meta charset="UTF-8">
+	<title>jbucks to usd</title>
+	
+	<!-- discord embed -->
+	<meta property="og:title" content="jbucks to USD converter">
+	<meta property="og:description" content="Convert jbucks to USD!">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>jbucks to usd covnerter made by jjboi 🔥🔥🔥👍👍👍</h1>
+	<hr>
+
+    <!-- jbucks to usd -->
+    <a>Enter jbucks amount</a>
+    <input type="number" id="jbucks-input" min="0">
+    <button id="jbucks-usd-button">convert to USD</button>
+	<a id="jbucks-usd-output"></a><br>
+
+    <!-- usd to jbucks -->
+    <a>Enter USD amount</a>
+    <input type="number" id="usd-input" min="0">
+    <button id="usd-jbucks-button">convert to jbucks</button>
+	<a id="usd-jbucks-output"></a><br>
+
+	<!-- credits wow cool -->
+	<br><hr>
+	<strong><a>credits:</a></strong><br>
+	<a href="https://www.w3schools.com/tags/att_input_type_number.asp" target="_blank">w3schools</a><br>
+	<a href="https://stackoverflow.com/questions/1358810/how-do-i-change-the-text-of-an-element-using-javascript" target="_blank">stack overflow from 16 years ago</a><br>
+	<a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_form_elements" target="_blank">w3schools again</a>
+</body>
+<script>
+    document.getElementById("jbucks-usd-button").addEventListener("click", function() {
+		var jbucks = document.getElementById("jbucks-input").value;
+		var usd = jbucks / 40;
+		document.getElementById("jbucks-usd-output").textContent=jbucks + " jbucks is $" + usd;
+    })
+    document.getElementById("usd-jbucks-button").addEventListener("click", function() {
+		var usd = document.getElementById("usd-input").value;
+		var jbucks = usd * 40;
+		document.getElementById("usd-jbucks-output").textContent="$" + usd + " usd is " + jbucks + " jbucks";
+    })
+</script>
