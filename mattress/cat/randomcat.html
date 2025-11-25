@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>random cat picture!! ! !</title>
-  <meta property="og:title" content="omg random cat pciture!! ! !">
-  <meta property="og:description" content="click for a random cat!!">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="random-cat-styles.css">
+    <meta charset="UTF-8">
+    <title>random cat picture!! ! !</title>
+    <meta property="og:title" content="omg random cat pciture!! ! !">
+    <meta property="og:description" content="click for a random cat!!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="random-cat-styles.css">
 </head>
 <body>
+   <p id="text">Click or tap the picture to load a new one!</p>
+   <img id="randomImage" alt="omg random cat pciture!! ! !">
 
-  <p>Click or tap the picture to load a new one!</p>
-  <img id="randomImage" alt="omg random cat pciture!! ! !">
+   <script>
+      const img = document.getElementById("randomImage");
 
-  <script>
-    const img = document.getElementById("randomImage");
+      async function loadRandomCat() {
+         try {
+            const response = await fetch("./media.amt");
+            const text = await response.text();
+            const firstLine = text.split("\n")[0].trim(); // only use the first line
+            const count = parseInt(firstLine);
 
-    async function loadRandomCat() {
-      try {
-        const response = await fetch("./media.amt");
-        const text = await response.text();
-        const firstLine = text.split("\n")[0].trim(); // only use the first line
-        const count = parseInt(firstLine);
-
-        const randomNumber = Math.floor(Math.random() * count) + 1;
-        img.src = `meow/jpg/${randomNumber}.jpg`;
-      } catch (err) {
-        console.error("Failed to load image amount:", err);
+            const randomNumber = Math.floor(Math.random() * count) + 1;
+            img.src = `meow/jpg/${randomNumber}.jpg`;
+            document.getElementById("text").textContent="Click or tap the picture to load a new one! (" + randomNumber + "/" + count + ")";
+         } catch (err) {
+          console.error("Failed to load image amount:", err);
+         }
       }
-    }
 
-    // Load image on page load
-    loadRandomCat();
+      // Load image on page load
+      loadRandomCat();
 
-    // reload page when image is clicked
-    img.addEventListener("click", () => {
-      location.reload();
-    });
+      // reload page when image is clicked
+      img.addEventListener("click", () => {
+        location.reload();
+      });
   </script>
-
 </body>
 </html>
