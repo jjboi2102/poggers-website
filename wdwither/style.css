@@ -45,6 +45,10 @@ button {
     font-family: "SpriteGraffiti";
 }
 
+.mega-wide-button {
+    width: 690px;
+}
+
 .small-button {
     border-radius: 7px;
     border-width: 5px;
