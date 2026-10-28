@@ -1,6 +1,6 @@
 @echo off
 
-mkdir "%userprofile%\jjboi-programs\4DSkinCreator"
+mkdir "%userprofile%\jjboi-programs\4DSkinCreator\temp"
 cd "%userprofile%\jjboi-programs\4DSkinCreator"
 
 if exist "template.zip" (exit) else (cls & echo downloading template pack)
