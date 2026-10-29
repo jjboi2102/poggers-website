@@ -3,6 +3,7 @@
 echo Downloading template skinpack...
 
 mkdir "%userprofile%\jjboi-programs\4DSkinCreator\temp"
+mkdir "%userprofile%\jjboi-programs\4DSkinCreator\output"
 cd "%userprofile%\jjboi-programs\4DSkinCreator"
 
 if exist "template.zip" (exit) else (cls & echo downloading template pack)
