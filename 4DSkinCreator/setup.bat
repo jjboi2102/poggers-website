@@ -1,6 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
+rmdir /s /q "%userprofile%\jjboi-programs\4DSkinCreator"
+
 title 4D Skin Creator - updater
 
 REM download version file thing yes
