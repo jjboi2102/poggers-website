@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("NunitoSans-Bold.ttf") format("truetype");
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF; /* text color */
+}
+
+p {
+    font-family: "Nunito Sans";
+    text-align: center;
+}
+
+p.header {
+    font-size: xx-large;
+}
+
+a.link { /* links */
+    color: #00FFFF
+}
+
+a.small_text {
+    font-size: small;
+}
